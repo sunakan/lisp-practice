@@ -1,0 +1,23 @@
+= Common Lisp
+
+* Steel Bank Common Lisp
+
+== 導入
+
+----
+$ sudo apt install -y sbcl
+----
+
+== REPLと終了
+
+.REPL
+----
+$ sbcl
+----
+
+.REPL内
+----
+(quit)
+or
+(exit)
+----
