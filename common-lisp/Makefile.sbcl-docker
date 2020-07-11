@@ -26,3 +26,11 @@ append: ## appendを再現
 .PHONY: lambda
 lambda: ## mapにlambda
 	@$(docker-sbcl) --script lambda.lisp
+
+.PHONY: pow
+pow: ## N乗
+	@$(docker-sbcl) --script pow.lisp
+
+.PHONY: sum-list-length
+sum-list-length: ## listの長さの合計
+	@$(docker-sbcl) --script sum-list-length.lisp
