@@ -1,0 +1,28 @@
+################################################################################
+# マクロ
+################################################################################
+define docker-sbcl
+  docker run \
+    --rm \
+    --interactive \
+    --tty \
+    --workdir $(PWD) \
+    --mount type=bind,source=$(PWD)/,target=$(PWD)/ \
+    fukamachi/sbcl:latest-debian
+endef
+
+
+################################################################################
+# タスク
+################################################################################
+.PHONY: hello
+hello: ## helloworld
+	@$(docker-sbcl) --script hello.lisp
+
+.PHONY: append
+append: ## appendを再現
+	@$(docker-sbcl) --script append.lisp
+
+.PHONY: lambda
+lambda: ## mapにlambda
+	@$(docker-sbcl) --script lambda.lisp

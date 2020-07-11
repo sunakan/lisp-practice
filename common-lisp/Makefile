@@ -1,3 +1,2 @@
-.PHONY: hello
-hello:
-	@sbcl --script hello.lisp
+include Makefile.sbcl-docker
+include Makefile.help
